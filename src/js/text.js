@@ -3,6 +3,7 @@ export function Text(title,body) {
     this.body = body;
   }
 
-Text.prototype.paraTeaser = () => {
-	return this.body.match(/\r/gi);
+Text.prototype.paraTeaser = function() {
+	return this.body.match(/^\w+|(?<=\n)\w+\b/gi);
 }
+
